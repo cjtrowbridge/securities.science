@@ -3,7 +3,7 @@
 Hook('User Is Not Logged In','PublicPage();');
 
 function PublicPage(){
-  Nav('main','link','My Data','/');
+  Nav('main','link','My Data','/my-data');
   Nav('main','link','Explore','/explore');
   switch(path(0)){
     case 'explore':
@@ -21,7 +21,7 @@ function PublicPage(){
 Hook('User Is Logged In','UserPage();');
 
 function UserPage(){
-  Nav('main','link','My Data','/');
+  Nav('main','link','My Data','/my-data');
   Nav('main','link','Explore','/explore');
   switch(path(0)){
     case 'explore':
