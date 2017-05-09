@@ -3,7 +3,7 @@
 Hook('User Is Not Logged In','PublicPage();');
 
 function PublicPage(){
-  Nav('main','link','Explore','/explore');
+  Nav('main-not-logged-in','link','Explore','/explore');
   switch(path(0)){
     case 'explore':
       include('PublicExplore.php');
@@ -20,8 +20,8 @@ function PublicPage(){
 Hook('User Is Logged In','UserPage();');
 
 function UserPage(){
-  Nav('main','link','My Data','/my-data');
-  Nav('main','link','Explore','/explore');
+  Nav('main-logged-in','link','My Data','/my-data');
+  Nav('main-logged-in','link','Explore','/explore');
   switch(path(0)){
     case 'explore':
       include('UserExplore.php');
