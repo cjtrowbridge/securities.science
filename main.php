@@ -3,7 +3,6 @@
 Hook('User Is Not Logged In','PublicPage();');
 
 function PublicPage(){
-  Nav('main','link','My Data','/my-data');
   Nav('main','link','Explore','/explore');
   switch(path(0)){
     case 'explore':
