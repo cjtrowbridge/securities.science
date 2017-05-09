@@ -14,7 +14,7 @@ function PublicHomepageBodyCallback(){
 			<?php Event('Auth Login Options'); ?>
 			<p>Once you log in, you can develop your own strategies and contribute to the ones you like!</p>
 			
-			<h2>Some of My Recent research</h2>
+			<h2>Some of My Recent Research</h2>
 			<p>Here is some recent research I have done, demonstrating the efficacy of buying leveraged commodity ETFs when the RSI-14 indicates they are underbought.</p>
 			<?php
 
@@ -33,7 +33,7 @@ WHERE RSI14 < 30
 GROUP BY Symbol
 ORDER BY `Average Compound Growth To Date` DESC
 ";
-echo "<h2>Strategy 1</h2>\n";
+echo "<h3>Strategy 1</h3>\n";
 echo "<p>This strategy is a very obvious one which I can not take credit for. This assumes that whenever the RSI-14 of a stock is below 30, buy it at the following open and then sell at close. Proving this correct is simply a way of validating that the system is working.</p>\n";
 $Strategy1=Query($SQL);
 echo "<pre>".$SQL."</pre>";
@@ -56,7 +56,7 @@ WHERE RSI14 < 30
 GROUP BY Symbol
 ORDER BY `Average Compound Growth To Date` DESC
 ";
-echo "<h2>Strategy 2</h2>\n";
+echo "<h3>Strategy 2</h3>\n";
 echo "<p>This strategy is more optimistic. It assumes you buy at the low and sell at the high point on the day after each RSI-14 hits 30 or lower at close the night before. As you can see, there is a huge improvement but this is too optimistic to actually accomplish. My point here is that buying at opening and selling at close is not necessarily the best strategy for leveraging RSI-14 data..</p>";
 $Strategy2=Query($SQL);
 echo "<pre>".$SQL."</pre>";
