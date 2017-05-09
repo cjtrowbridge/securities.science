@@ -1,12 +1,20 @@
 <?php
 
 function PublicHomepageBodyCallback(){
-  ?><h1><a href="https://securities.science">securities.science</a></h1>
+  ?>
+?>
+	
+
 
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-			<p>This site will be a way of running AI models against useful historic datasets and publishing successes for mutual benefit.</p>
+			<h1>Welcome to securities.science</h1>
+			<p><i>This site is a way of running analytical models against useful historic datasets and publishing successes for mutual benefit.</i></p>
+
+			<p>Log in to run your own strategies and contribute to the ones you like!</p>
+			<?php Event('Auth Login Options'); ?>
+			
 			<p>Here is some recent research I have done, demonstrating the efficacy of buying leveraged commodity ETFs when the RSI-14 indicates they are underbought.</p>
 			<?php
 
