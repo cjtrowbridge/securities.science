@@ -1,5 +1,8 @@
 <?php
 
+include('QueryEngine.php');
+ 
+
 Hook('User Is Not Logged In','PublicPage();');
 
 function PublicPage(){
@@ -24,11 +27,6 @@ function PublicPage(){
 Hook('User Is Logged In','UserPage();');
 
 function UserPage(){
-  
-  //If the user is logged in, they can run queries
-  include('QueryEngine.php');
-  SecuritiesScienceQueryEngine();
-  
   Nav('main-logged-in','link','My Data','/my-data');
   Nav('main-logged-in','link','Explore','/explore');
   switch(path(0)){
