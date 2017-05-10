@@ -1,5 +1,7 @@
 <?php
 
+SecuritiesScienceQueryEngine();
+  
 function SecuritiesScienceQueryEngine(){
   if(path(0)=='query'){
   
@@ -15,4 +17,12 @@ function SecuritiesScienceQueryEngine(){
     //QueryEngine should always exit if called.
     exit;
   }
+}
+
+function ShowQuery($QueryID){
+  Query("SELECT * FROM Queries WHERE QueryID = ".intval($QueryID),'astria');
+  
+  
+  
+  FetchDiv($URL);
 }
