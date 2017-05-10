@@ -4,7 +4,11 @@ Hook('User Is Not Logged In','PublicPage();');
 
 function PublicPage(){
   Nav('main-not-logged-in','link','Explore','/explore');
+  Nav('main-not-logged-in','link','Login','/login');
   switch(path(0)){
+    case 'login':
+      PromptForLogin();
+      break;
     case 'explore':
       include('PublicExplore.php');
       TemplateBootstrap4('explore','PublicExploreBodyCallback();');
