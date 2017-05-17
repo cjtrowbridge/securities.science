@@ -3,11 +3,17 @@
 include('QueryEngine.php');
  
 
-Hook('User Is Not Logged In','PublicPage();');
+Hook('User Is Not Logged In - Before Presentation','PublicPageBefore();');
 
-function PublicPage(){
+function PublicPageBefore(){
   Nav('main-not-logged-in','link','Explore','/explore');
   Nav('main-not-logged-in','link','Login','/login');
+}
+
+
+Hook('User Is Not Logged In - Presentation','PublicPage();');
+
+function PublicPage(){
   switch(path(0)){
     case 'login':
       PromptForLogin();
