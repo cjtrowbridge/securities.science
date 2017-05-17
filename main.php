@@ -24,11 +24,17 @@ function PublicPage(){
 }
 
 
-Hook('User Is Logged In','UserPage();');
+Hook('User Is Logged In - Before Presentation','UserPageBefore();');
 
-function UserPage(){
+function UserPageBefore(){
   Nav('main-logged-in','link','My Data','/my-data');
   Nav('main-logged-in','link','Explore','/explore');
+}
+
+
+Hook('User Is Logged In - Presentation','UserPage();');
+
+function UserPage(){
   switch(path(0)){
     case 'explore':
       include('UserExplore.php');
