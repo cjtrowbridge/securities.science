@@ -11,7 +11,7 @@ function ExploreTableBodyCallback(){
   $Name = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],path(1));
   
   $Description = Query("SELECT * FROM Tables WHERE Name LIKE '".$Name."'",'stockhistory-rea');
-  if(!(isset($Description[0])){
+  if(!(isset($Description[0]))){
     echo '<h1>Invalid Table Specified</h1>';
     return;
   }
