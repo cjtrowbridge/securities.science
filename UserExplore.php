@@ -6,7 +6,7 @@ function UserExploreBodyCallback(){
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-12">
-      
+      <h4>People I Follow</h4>
       <p>List people I folow and suggest new people to follow.</p>
       <p>Show their queries and feedback. Allow users to provide feedback.</p>
       
