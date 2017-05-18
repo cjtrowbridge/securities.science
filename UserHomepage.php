@@ -17,6 +17,9 @@ function UserHomepageBodyCallback(){
       <?php
         $Queries = Query("SELECT * FROM Query WHERE UserID = ".$ASTRIA['Session']['User']['UserID']);
         foreach($Queries as $Query){
+          $NiceURLTitle=strtolower($Query['name']);
+          $NiceURLTitle=strtolower(' ','+',$NiceURLTitle);
+          $NiceURLTitle=urlencode($NiceURLTitle);
       ?>
       
       <div class="row no-gutters">
@@ -26,7 +29,7 @@ function UserHomepageBodyCallback(){
             <i class="material-icons" title="Edit Query">edit</i>
             <i class="material-icons" title="Run Now">flight_takeoff</i>
           </div>
-          <div class="name"><a href="/run-query/<?php echo $Query['QueryID']; ?>" target="_blank"><?php echo $Query['Name']; ?></a></div>
+          <div class="name"><a href="/run-query/<?php echo $Query['QueryID']; ?>/<?php echo $NiceURLTitle; ?>" target="_blank"><?php echo $Query['Name']; ?></a></div>
           <div class="lastRun"><?php echo ago($Query['LastRun']); ?></div>
           <div class="description"><?php echo $Query['Description']; ?></div>
         </div>
