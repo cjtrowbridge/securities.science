@@ -53,7 +53,7 @@ function PublicExploreBodyCallback(){
     <div class="col-md-12">
       <h1>Check Out Our Data Sources</h1>
       <?php
-        $TableDescriptions = Query("SELECT * FROM Tables");
+        $TableDescriptions = Query("SELECT * FROM Tables",'stockhistory');
         $Descriptions=array();
         foreach($TableDescriptions as $TableDescription){
           $Descriptions[$TableDescription['Name']]=$TableDescription['Description'];
