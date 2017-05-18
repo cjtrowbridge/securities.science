@@ -49,9 +49,9 @@ function PublicExploreBodyCallback(){
       
     </div>
   </div>
-  <div class="row no-gutters">
+  <div class="row no-gutters" id="tables">
     <div class="col-md-12">
-      <h1>Check Out Our Data Sources</h1>
+      <h1>Check Out The Available MySQL Tables</h1>
       <?php
         $TableDescriptions = Query("SELECT * FROM Tables",'stockhistory');
         $Descriptions=array();
