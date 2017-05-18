@@ -34,7 +34,7 @@ function UserEditQueryBodyCallback(){
             
             <div class="form-group">
               <p><b>Description:</b></p>
-              <textarea class="AstriaEditor ready" id="description" name="description" value="<?php echo $Query['Description']; ?>"></textarea>
+              <textarea class="AstriaEditor ready" id="description" name="description"><?php echo $Query['Description']; ?></textarea>
             </div>
             
             <div class="form-group">
