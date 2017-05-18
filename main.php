@@ -57,7 +57,7 @@ Hook('User Is Logged In - Presentation','UserPage();');
 function UserPage(){
   
   global $ASTRIA;
-  if($ASTRIA['Session']['User']['UserID']!==1{
+  if($ASTRIA['Session']['User']['UserID']!==1){
     die('Not available for public yet. Check back.');
   }
   
