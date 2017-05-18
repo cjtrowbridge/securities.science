@@ -66,6 +66,7 @@ function PublicExploreBodyCallback(){
           <?php
         }
       ?>
+      <p>Want more data? Please <a href="mailto:chris.j.trowbridge@gmail.com">send me an email</a> if you'd like another data source added and I'll see what I can do :]</p>
     </div>
 </div>
 
