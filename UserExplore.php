@@ -18,4 +18,5 @@ function UserExploreBodyCallback(){
 </div>
 
   <?php
+  PublicExploreBodyCallback();
 }
