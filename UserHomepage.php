@@ -15,7 +15,7 @@ function UserHomepageBodyCallback(){
       <p>You can <a href="/create-query">create a new query now</a> or check out some queries <a href="/explore">other people are working on</a>.</p>
       
       <?php
-        $Queries = Query("SELECT * FROM Query WHERE UserID = ".$ASTRIA['Session']['User']['UserID']);
+        $Queries = Query("SELECT * FROM Query WHERE Trash=0 AND UserID = ".$ASTRIA['Session']['User']['UserID']);
         foreach($Queries as $Query){
           $NiceURLTitle=strtolower($Query['Name']);
           $NiceURLTitle=urlencode($NiceURLTitle);
@@ -38,6 +38,35 @@ function UserHomepageBodyCallback(){
       <?php
         }
       ?>
+      
+      <p><a href="$('#trash').slideToggle();">Show Deleted Queries</a></p>
+      
+      <div id="trash" class="hidden">
+        <?php
+          $Queries = Query("SELECT * FROM Query WHERE Trash=1 AND UserID = ".$ASTRIA['Session']['User']['UserID']);
+          foreach($Queries as $Query){
+            $NiceURLTitle=strtolower($Query['Name']);
+            $NiceURLTitle=urlencode($NiceURLTitle);
+            $NiceURLTitle=str_replace('%20','+',$NiceURLTitle);
+
+        ?>
+
+        <div class="row no-gutters">
+          <div class="query">
+            <div class="options">
+              <a href="/delete-query/<?php echo $Query['QueryID']; ?>"><i class="material-icons" title="Delete Query">clear</i></a>
+              <a href="/edit-query/<?php echo $Query['QueryID']; ?>"><i class="material-icons" title="Edit Query">edit</i></a>
+            </div>
+            <div class="name"><a href="/run-query/<?php echo $Query['QueryID']; ?>/<?php echo $NiceURLTitle; ?>"><?php echo $Query['Name']; ?></a></div>
+            <div class="lastRun"><?php echo ago($Query['LastRun']); ?></div>
+            <div class="description"><?php echo $Query['Description']; ?></div>
+          </div>
+        </div>
+
+        <?php
+          }
+        ?>
+      </div>
       
     </div>
   </div>
