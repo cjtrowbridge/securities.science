@@ -2,7 +2,7 @@
 
 function RunQueryBodyCallback(){
   global $ThisQuery;
-  if(count($ThisQuery)==0{
+  if(count($ThisQuery)==0){
     ?>
   <h1>Query Not Found!</h1>
     <?php
