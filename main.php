@@ -21,6 +21,16 @@ Hook('User Is Not Logged In - Presentation','PublicPage();');
 
 function PublicPage(){
   switch(path(0)){
+    case 'run-query':
+      global $ThisQuery;
+      $ThisQuery = Query("SELECT QueryID,Name,Description FROM Query WHERE QueryID = ".intval(path(1)));
+      if(isset($ThisQuery[0])){
+        $Title=$ThisQuery[0]['Name'];
+      }else{
+        $ThisQuery='Query Not Found';
+      }
+      TemplateBootstrap4($Title,'RunQueryBodyCallback();');
+      break;
     case false:
     case 'explore':
       include('PublicExplore.php');
