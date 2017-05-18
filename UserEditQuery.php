@@ -11,7 +11,7 @@ function UserEditQueryPostHandler(){
   ");
   if($Results[0]['Count']==0){
     //TODO
-    die("Create fork of query owned by current user");
+    die("Create fork of query owned by current user and apply changes there.");
   }
   
   $Name             = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
