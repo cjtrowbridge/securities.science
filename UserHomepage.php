@@ -18,8 +18,9 @@ function UserHomepageBodyCallback(){
         $Queries = Query("SELECT * FROM Query WHERE UserID = ".$ASTRIA['Session']['User']['UserID']);
         foreach($Queries as $Query){
           $NiceURLTitle=strtolower($Query['name']);
-          $NiceURLTitle=strtolower(' ','+',$NiceURLTitle);
           $NiceURLTitle=urlencode($NiceURLTitle);
+          $NiceURLTitle=strtolower('%20','+',$NiceURLTitle);
+          
       ?>
       
       <div class="row no-gutters">
