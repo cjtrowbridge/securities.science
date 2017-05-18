@@ -53,7 +53,7 @@ function UserEditQueryBodyCallback(){
   ?>
   <div class="row no-gutters">
     <div class="col-md-12">
-      <h1>Edit Query <a href="/run-query/<?php echo $Query['QueryID'].'/'.$NiceURLTitle; ?>" style="float: right;"><i class="material-icons">flight_takeoff</i></a></h1>
+      <h1>Edit Query</h1>
       <form action="/edit-query" method="post" class="form">
         <input type="hidden" name="QueryID" value="<?php echo $Query['QueryID']; ?>">
         <div class="row no-gutters">
@@ -61,6 +61,7 @@ function UserEditQueryBodyCallback(){
             
             <div class="options">
               <a href="/delete-query/<?php echo $Query['QueryID']; ?>"><i class="material-icons" title="Delete Query">clear</i></a>
+              <a href="/run-query/<?php echo $Query['QueryID'].'/'.$NiceURLTitle; ?>" style="float: right;"><i class="material-icons" title="Run Query">flight_takeoff</i></a>
             </div>
             
             <div class="name">
