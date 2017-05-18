@@ -58,7 +58,7 @@ function UserPage(){
   switch(path(0)){
     case 'run-query':
       global $ThisQuery;
-      $ThisQuery = Query("SELECT QueryID,Name,Description FROM Query WHERE QueryID = ".intval(path(1)));
+      $ThisQuery = Query("SELECT QueryID,Name,Description,ParserLastOutput FROM Query WHERE QueryID = ".intval(path(1)));
       if(isset($ThisQuery[0])){
         $Title=$ThisQuery[0]['Name'];
       }else{
