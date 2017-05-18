@@ -9,7 +9,7 @@ function ReadOnlyQuery($QueryID){
   if(count($Results)==0){
     die('Invalid Query ID');
   }
-  
+  $Results=$Results[0];
   
   $Engine          = Query($Results[0]['Code'],'stockhistory-readonly');
   $Parser          = ArrTabler($Engine);
