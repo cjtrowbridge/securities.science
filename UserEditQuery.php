@@ -80,7 +80,7 @@ function UserEditQueryBodyCallback(){
               <?php
                 //TODO this should eventually become a selector what which engine to use, but for now it is only MySQL
               ?>
-              <p><b>MySQL Code:</b></p>
+              <p><b>MySQL Code:</b> <a href="/explore#tables">Curious about available data?</a></p>
               <textarea class="AstriaEditor ready" id="code" name="code"><?php echo $Query['Code']; ?></textarea>
             </div>
             
