@@ -19,7 +19,7 @@ function PublicExploreBodyCallback(){
             Description,
             LastUpdated
           FROM Query
-          LEFT JOIN Users ON Query.UserID = Users.UserID
+          LEFT JOIN User ON Query.UserID = User.UserID
           ORDER BY LastUpdated DESC
         ");
         //TODO make this smarter
