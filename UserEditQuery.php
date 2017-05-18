@@ -19,9 +19,10 @@ function UserEditQueryBodyCallback(){
             <div class="lastRun">Last Run</div>
             <div class="description">Query Description</div>
             
-            <textarea class="AstriaEditor ready"></textarea>
+            <textarea class="AstriaEditor ready" id="query" name="query"></textarea>
             <script>
               AstriaEditor();
+              $('.query').focus();
             </script>
           </div>
         </div>
