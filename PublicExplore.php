@@ -63,8 +63,12 @@ function PublicExploreBodyCallback(){
         
         foreach($Tables as $Table){
           $TableName=$Table['Tables_in_stockhistory'];
+          $Description = 'No description available.';
+          if(isset($Descriptions[$TableName])){
+            $Description=$Descriptions[$TableName];
+          }
           if($TableName!=='Statistics'){
-            echo '<p><a href="/explore-table/'.urlencode($TableName).'">'.$TableName.'</a> '.$Descriptions[$TableName].'</p>';
+            echo '<p><a href="/explore-table/'.urlencode($TableName).'">'.$TableName.'</a><br> '.$Description.'</p>';
             
           }
         }
