@@ -1,8 +1,13 @@
 <?php
 
 include('QueryEngine.php');
-include('SecuritiesScienceTemplateHead.php');
+
 Hook('Template Head','SecuritiesScienceTemplateHead();');
+function SecuritiesScienceTemplateHead(){
+  ?>
+  <link rel="stylesheet" href="/plugins/securities.science/style.css">
+<?php
+}
 
 Hook('User Is Not Logged In - Before Presentation','PublicPageBefore();');
 
