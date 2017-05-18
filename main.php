@@ -48,6 +48,7 @@ Hook('User Is Logged In - Before Presentation','UserPageBefore();');
 function UserPageBefore(){
   include_once('ShowSecuritiesScienceScraperStats.php');
   Hook('Architect Homepage','ShowSecuritiesScienceScraperStats();');
+  Nav('main-logged-in','link','Explore','/explore');
 }
 
 
