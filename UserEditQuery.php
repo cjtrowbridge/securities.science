@@ -1,8 +1,23 @@
 <?php
 
 function UserEditQueryPostHandler(){
-  pd($_POST);
+  global $ASTRIA;
   
+  $Name            = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
+  $Descriptipon    = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['description']);
+  $Code            = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['code']);
+  
+  $SQL="
+    UPDATE `Query` SET 
+      `Name`        = '".$Name."', 
+      `Description` = '".$Description."', 
+      `Code`        = '".$Code."',
+      `CodeSHA2`    = '".sha256($Code)."'
+    WHERE 
+      UserID        = ".$ASTRIA['Session']['User']['UserID']." AND
+      QueryID       = ".intval($_POST['QueryID'])."
+  ";
+  pd($SQL);
   exit;
 }
 
