@@ -39,7 +39,7 @@ function UserHomepageBodyCallback(){
         }
       ?>
       
-      <p><a href="$('#trash').slideToggle();">Show Deleted Queries</a></p>
+      <p><a href="javascript:void(0);" onclick="$('#trash').slideToggle();">Show Deleted Queries</a></p>
       
       <div id="trash" class="hidden">
         <?php
