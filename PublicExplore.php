@@ -34,7 +34,7 @@ function PublicExploreBodyCallback(){
       <div class="row no-gutters">
         <div class="query">
           <div class="options">
-            <i class="material-icons" title="Edit Query">edit</i>
+            <a href="/edit-query/<?php echo $Query['QueryID']; ?>"><i class="material-icons" title="Edit Query">edit</i></a>
           </div>
           <div class="name"><a href="/run-query/<?php echo $Query['QueryID']; ?>/<?php echo $NiceURLTitle; ?>"><?php echo $Query['Name']; ?></a></div>
           <div class="lastUpdated"><?php echo ago($Query['LastUpdated']); ?> by <?php echo $Query['FirstName'].' '.$Query['LastName']; ?></div>
