@@ -6,7 +6,7 @@ function UserCreateQueryPostHandler(){
   $Name = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
   
   $SQL="
-    INSERT INTO `Queries`(
+    INSERT INTO `Query`(
       `UserID`, 
       `Name`, 
       `Description`, 
