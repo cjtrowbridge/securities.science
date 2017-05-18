@@ -32,7 +32,7 @@ function ExploreTableBodyCallback(){
   <h2>Table Contents (Top 100 Rows)</h2>
   <?php
   
-  $Describe = Query('SELECT * FROM '.$Description['Name'].' LIMIT 100','stockhistory');
+  $Describe = Query('SELECT * FROM '.$Description['Name'].' ORDER BY 1 DESC LIMIT 100','stockhistory');
   echo ArrTabler($Describe);
   
   
