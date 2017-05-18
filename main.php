@@ -53,6 +53,10 @@ function UserPage(){
       include('UserExplore.php');
       TemplateBootstrap4('Explore','UserExploreBodyCallback();');
       break;
+    case 'create-query':
+      include('UserCreateQuery.php');
+      TemplateBootstrap4('Create Query','UserCreateQueryBodyCallback();');
+      break;
     case 'edit-query':
       include('UserEditQuery.php');
       TemplateBootstrap4('Edit Query','UserEditQueryBodyCallback();');
