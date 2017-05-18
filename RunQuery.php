@@ -48,8 +48,6 @@ function RunQueryBodyCallback(){
     </div>
   </h1>
   <p><?php echo nl2br($Query['Description']); ?></p>
-  <p><b>Code: </b></p>
-  <p><?php echo htmlentities(nl2br($Query['Code'])); ?></p>
 <?php
   
   $Preview=' Running query now. While you wait, take a look at the results from last time it was run...<br><br>'.$Query['ParserLastOutput'];
