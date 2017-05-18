@@ -1,6 +1,7 @@
 <?php
 
 function ReadOnlyQuery($QueryID){
+  global $ASTRIA;
   
   //TODO check user quota or public quota
   
