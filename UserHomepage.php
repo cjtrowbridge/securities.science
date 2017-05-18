@@ -31,26 +31,6 @@ function UserHomepageBodyCallback(){
     </div>
   </div>
 </div>
-<style>
-  .query{
-    border: 1px solid #c7c7c7;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  .query .options{
-    float: right;
-  }
-  .query .name{
-     font-weight: bold;
-  }
-  .query .lastRun{
-     font-style: italic;
-  }
-  .query .description{
-     padding: 1rem;
-     text-indent: 1rem;
-  }
-</style>
 
   <?php
 }
