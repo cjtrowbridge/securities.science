@@ -14,8 +14,8 @@ function UserEditQueryPostHandler(){
     die("Create fork of query owned by current user and apply changes there.");
   }
   
-  $Name             = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
-  $Description      = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['description']);
+  $Name             = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],htmlentities($_POST['name']));
+  $Description      = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],htmlentities($_POST['description']));
   $Code             = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['code']);
   
   $SQL="
@@ -63,13 +63,13 @@ function UserEditQueryBodyCallback(){
             <div class="name">
               <div class="form-group">
                 <label for="usr">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" value="<?php echo $Query['Name']; ?>">
+                <input type="text" class="form-control" id="name" name="name" value="<?php echo html_entity_decode($Query['Name']); ?>">
               </div>
             </div>
             
             <div class="form-group">
               <p><b>Description:</b></p>
-              <textarea class="AstriaEditor ready" id="description" name="description"><?php echo $Query['Description']; ?></textarea>
+              <textarea class="AstriaEditor ready" id="description" name="description"><?php echo html_entity_decode($Query['Description']); ?></textarea>
             </div>
             
             <div class="form-group">
