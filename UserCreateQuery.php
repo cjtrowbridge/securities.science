@@ -1,6 +1,7 @@
 <?php
 
 function UserCreateQueryPostHandler(){
+  global $ASTRIA;
   
   $Name = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
   
