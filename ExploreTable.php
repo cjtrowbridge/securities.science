@@ -18,7 +18,7 @@ function ExploreTableBodyCallback(){
   $Description = $Description[0];
   ?>
   
-  <h1><?php echo $Description['Name']; ?></h1>
+  <h1>MySQL Table: '<?php echo $Description['Name']; ?>'</h1>
   <p><?php echo $Description['Description']; ?></p>
   
   <h2>Table Description</h2>
