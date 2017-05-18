@@ -20,11 +20,11 @@ function PublicPage(){
       break;
     case 'explore':
       include('PublicExplore.php');
-      TemplateBootstrap4('explore','PublicExploreBodyCallback();');
+      TemplateBootstrap4('Explore','PublicExploreBodyCallback();');
       break;
     default:
       include('PublicHomepage.php');
-      TemplateBootstrap4('home','PublicHomepageBodyCallback();');
+      TemplateBootstrap4('Home','PublicHomepageBodyCallback();');
       break;
   }
 }
@@ -45,11 +45,15 @@ function UserPage(){
   switch(path(0)){
     case 'explore':
       include('UserExplore.php');
-      TemplateBootstrap4('explore','UserExploreBodyCallback();');
+      TemplateBootstrap4('Explore','UserExploreBodyCallback();');
+      break;
+    case 'edit-query':
+      include('UserEditQuery.php');
+      TemplateBootstrap4('Edit Query','UserEditQueryBodyCallback();');
       break;
     default:
       include('UserHomepage.php');
-      TemplateBootstrap4('home','UserHomepageBodyCallback();');
+      TemplateBootstrap4('Home','UserHomepageBodyCallback();');
       break;
   }
   
