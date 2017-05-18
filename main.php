@@ -1,6 +1,6 @@
 <?php
 
-include('QueryEngine.php');
+include('RunQuery.php');
 
 Hook('Template Head','SecuritiesScienceTemplateHead();');
 function SecuritiesScienceTemplateHead(){
@@ -50,9 +50,8 @@ Hook('User Is Logged In - Presentation','UserPage();');
 function UserPage(){
   switch(path(0)){
     case 'run-query':
-      include('RunQuery.php');
       global $ThisQuery;
-      $ThisQuery = Query("SELECT * FROM Query WHERE QueryID = ".intval(path(1)));
+      $ThisQuery = Query("SELECT QueryID,Name,Description FROM Query WHERE QueryID = ".intval(path(1)));
       if(isset($ThisQuery[0])){
         $Title=$ThisQuery[0]['Name'];
       }else{
