@@ -23,6 +23,7 @@ function UserEditQueryPostHandler(){
       `Name`        = '".$Name."', 
       `Description` = '".$Description."', 
       `Code`        = '".$Code."',
+      `LastUpdated` = NOW(),
       `CodeSHA2`    = '".sha256($Code)."'
     WHERE 
       UserID        = ".$ASTRIA['Session']['User']['UserID']." AND
