@@ -30,7 +30,6 @@ function UserCreateQueryPostHandler(){
       NULL
     );
   ";
-  pd($SQL);exit;
   Query($SQL);
   header('Location: /edit-query/'.mysqli_insert_id($ASTRIA['databases']['astria']['resource']));
   exit;
