@@ -9,7 +9,9 @@ function UserHomepageBodyCallback(){
       <h4>Welcome to securities.science</h4>
       <p>Check us out on <a href="https://github.com/cjtrowbridge/securities.science" target="_blank">Github</a> and please <a href="mailto:chris.j.trowbridge@gmail.com">send me an email</a> if you have any comments of suggestions about how to imrpove this tool!</p>
     
-      <h5>My Queries</h5>
+      <h5>My Queries <a href="/edit-query"><i class="material-icons">add</i></a></h5>
+      <p>This page shows all the queries you are working on and lets you run or edit them.</p>
+      <p>You can <a href="/edit-query">create a new query now</a> or check out some queries <a href="/explore">other people are working on</a>.</p>
       
       <div class="container">
         <div class="row no-gutters">
