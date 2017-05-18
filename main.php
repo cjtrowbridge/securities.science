@@ -21,16 +21,14 @@ Hook('User Is Not Logged In - Presentation','PublicPage();');
 
 function PublicPage(){
   switch(path(0)){
-    case 'login':
-      PromptForLogin();
-      break;
+    case false:
     case 'explore':
       include('PublicExplore.php');
       TemplateBootstrap4('Explore','PublicExploreBodyCallback();');
       break;
     default:
-      include('PublicHomepage.php');
-      TemplateBootstrap4('Home','PublicHomepageBodyCallback();');
+    case 'login':
+      PromptForLogin();
       break;
   }
 }
@@ -59,10 +57,6 @@ function UserPage(){
       }
       TemplateBootstrap4($Title,'RunQueryBodyCallback();');
       break;
-    case 'explore':
-      include('UserExplore.php');
-      TemplateBootstrap4('Explore','UserExploreBodyCallback();');
-      break;
     case 'create-query':
       include('UserCreateQuery.php');
       if(isset($_POST['name'])){
@@ -82,6 +76,11 @@ function UserPage(){
     default:
       include('UserHomepage.php');
       TemplateBootstrap4('Home','UserHomepageBodyCallback();');
+      break;
+    case 'explore':
+      include('PublicExplore.php');
+      include('UserExplore.php');
+      TemplateBootstrap4('Explore','UserExploreBodyCallback();');
       break;
   }
   
