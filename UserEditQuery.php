@@ -10,24 +10,29 @@ function UserEditQueryBodyCallback(){
       <div class="container">
         <div class="row no-gutters">
           <div class="query">
+            
             <div class="options">
               <i class="material-icons" title="Delete Query">clear</i>
               <i class="material-icons" title="Edit Query">edit</i>
               <i class="material-icons" title="Run Now">flight_takeoff</i>
             </div>
+            
             <div class="name">
               <div class="form-group">
                 <label for="usr">Name:</label>
                 <input type="text" class="form-control" id="usr">
               </div>
             </div>
-            <div class="lastRun">Last Run</div>
             
-            <p><b>Description:</b></p>
-            <textarea class="AstriaEditor ready" id="description" name="description"></textarea>
+            <div class="form-group">
+              <p><b>Description:</b></p>
+              <textarea class="AstriaEditor ready" id="description" name="description"></textarea>
+            </div>
             
-            <p><b>MySQL Code:</b></p>
-            <textarea class="AstriaEditor ready" id="query" name="query"></textarea>
+            <div class="form-group">
+              <p><b>MySQL Code:</b></p>
+              <textarea class="AstriaEditor ready" id="query" name="query"></textarea>
+            </div>
             
             <script>
               AstriaEditor();
