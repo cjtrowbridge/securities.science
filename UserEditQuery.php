@@ -45,11 +45,15 @@ function UserEditQueryBodyCallback(){
     return;
   }
   $Query=$Query[0];
+  
+  $NiceURLTitle=strtolower($Query['Name']);
+  $NiceURLTitle=urlencode($NiceURLTitle);
+  $NiceURLTitle=str_replace('%20','+',$NiceURLTitle);
+  
   ?>
-<div class="container">
   <div class="row no-gutters">
     <div class="col-md-12">
-      <h1>Edit Query</h1>
+      <h1>Edit Query <a href="/run-query/<?php $Query['QueryID'].'/'.$NiceURLTitle; ?>"><i class="material-icons">flight_takeoff</i></a></h1>
       <form action="/edit-query" method="post" class="form">
         <input type="hidden" name="QueryID" value="<?php echo $Query['QueryID']; ?>">
         <div class="row no-gutters">
@@ -92,7 +96,6 @@ function UserEditQueryBodyCallback(){
       </form>
     </div>      
   </div>
-</div>
 
   <?php
 }
