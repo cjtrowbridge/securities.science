@@ -37,7 +37,7 @@ function PublicPage(){
       break;
     case 'explore-table':
       include('ExploreTable.php');
-      ExploreTable();
+      TemplateBootstrap4('Table Explorer','ExploreTableBodyCallback();');
       break;
     default:
     case 'login':
@@ -68,7 +68,7 @@ function UserPage(){
   switch(path(0)){
     case 'explore-table':
       include('ExploreTable.php');
-      ExploreTable();
+      TemplateBootstrap4('Table Explorer','ExploreTableBodyCallback();');
       break;
     case 'run-query':
       global $ThisQuery;
