@@ -55,7 +55,11 @@ function UserPage(){
       break;
     case 'create-query':
       include('UserCreateQuery.php');
-      TemplateBootstrap4('Create Query','UserCreateQueryBodyCallback();');
+      if(isset($_POST['name'])){
+        UserCreateQueryPostHandler();
+      }else{
+        TemplateBootstrap4('Create Query','UserCreateQueryBodyCallback();');
+      }
       break;
     case 'edit-query':
       include('UserEditQuery.php');
