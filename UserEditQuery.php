@@ -18,6 +18,11 @@ function UserEditQueryBodyCallback(){
             <div class="name">Query Name</div>
             <div class="lastRun">Last Run</div>
             <div class="description">Query Description</div>
+            
+            <textarea class="AstriaEditor ready"></textarea>
+            <script>
+              AstriaEditor();
+            </script>
           </div>
         </div>
       </div>
