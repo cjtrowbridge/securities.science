@@ -1,6 +1,6 @@
 <?php
 
-function ShowSecuritiesScienceScraperStats()(){
+function ShowSecuritiesScienceScraperStats(){
   ?>
   <h2>Scraper Stats</h2>
   <?php
