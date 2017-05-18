@@ -48,6 +48,17 @@ function PublicExploreBodyCallback(){
       
     </div>
   </div>
+  <div class="row no-gutters">
+    <div class="col-md-12">
+      <h1>Check Out Our Data Sources</h1>
+      <?php
+        $Tables = Query('SHOW TABLES','stockhistory-readonly');
+        foreach($Tables as $Table){
+          pd($Table);
+        }
+      ?>
+    </div>
+</div>
 
   <?php
 }
