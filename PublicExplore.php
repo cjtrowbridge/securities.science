@@ -68,7 +68,7 @@ function PublicExploreBodyCallback(){
             $Description=$Descriptions[$TableName];
           }
           if(
-            ($TableName!=='Statistics')
+            ($TableName!=='Statistics')&&
             ($TableName!=='Tables')
           ){
             echo '<p><a href="/explore-table/'.urlencode($TableName).'">'.$TableName.'</a><br> '.$Description.'</p>';
