@@ -29,7 +29,7 @@ function UserCreateQueryPostHandler(){
       NULL
     );
   ");
-  header('Location: /edit-query/'.mysqli_insert_id($ASTRIA['databases']['astria']['resource']);
+  header('Location: /edit-query/'.mysqli_insert_id($ASTRIA['databases']['astria']['resource']));
   exit;
   
 }
