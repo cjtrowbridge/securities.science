@@ -1,11 +1,17 @@
 <?php
 
+function UserEditQueryPostHandler(){
+  pd($_POST);
+  
+  exit;
+}
+
 function UserEditQueryBodyCallback(){
   if(path(1)==false){
     echo 'Query Not Found.';
     return;
   }
-  $Query=Query("SELECT * FROM Queries WHERE QueryID = ".intval(path(1)));
+  $Query=Query("SELECT * FROM Query WHERE QueryID = ".intval(path(1)));
   if(!(isset($Query[0]))){
     echo 'Query Not Found.';
     return;
@@ -16,6 +22,8 @@ function UserEditQueryBodyCallback(){
   <div class="row no-gutters">
     <div class="col-md-12">
       <h1>Edit Query</h1>
+      <form action="/edit-query" method="post" class="form">
+        <input type="hidden" name="QueryID" value="<?php echo $Query['QueryID']; ?>">
         <div class="row no-gutters">
           <div class="query">
             
@@ -53,11 +61,12 @@ function UserEditQueryBodyCallback(){
             <div class="form-group">
               <input type="submit" class="btn btn-success" value="Save Changes">
             </div>
-          </div>
+          </div>  
         </div>
-      </div>      
-    </div>
+      </form>
+    </div>      
   </div>
+</div>
 
   <?php
 }
