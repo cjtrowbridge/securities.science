@@ -34,7 +34,7 @@ function UserEditQueryBodyCallback(){
               $('#query').focus();
             </script>
             
-            <div class="input-group">
+            <div class="form-group">
               <button type="button" class="btn btn-success">Save</button>
             </div>
           </div>
