@@ -50,12 +50,6 @@ function PublicPage(){
 Hook('User Is Logged In - Before Presentation','UserPageBefore();');
 
 function UserPageBefore(){
-  
-  global $ASTRIA;
-  if(!($ASTRIA['Session']['User']['UserID']==1)){
-    die('Not available for public yet. Check back.');
-  }
-  
   include_once('ShowSecuritiesScienceScraperStats.php');
   Hook('Architect Homepage','ShowSecuritiesScienceScraperStats();');
   Nav('main-logged-in','link','Explore','/explore');
