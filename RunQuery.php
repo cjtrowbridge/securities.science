@@ -11,7 +11,7 @@ function ReadOnlyQuery($QueryID){
   }
   $Results=$Results[0];
   
-  $Engine          = Query($Results[0]['Code'],'stockhistory-readonly');
+  $Engine          = Query($Results['Code'],'stockhistory-readonly');
   $Parser          = ArrTabler($Engine);
   
   $EngineSanitized = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],serialize($Engine));
