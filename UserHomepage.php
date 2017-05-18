@@ -1,7 +1,8 @@
 <?php
 
 function UserHomepageBodyCallback(){
-  ?>
+  global $ASTRIA; 
+?>
 
 <div class="container">
   <div class="row no-gutters">
@@ -13,6 +14,11 @@ function UserHomepageBodyCallback(){
       <p>This page shows all the queries you are working on and lets you run or edit them.</p>
       <p>You can <a href="/create-query">create a new query now</a> or check out some queries <a href="/explore">other people are working on</a>.</p>
       
+      <?php
+        $Queries = Query("SELECT * FROM Query WHERE UserID = ".$ASTRIA['Session']['User']['UserID']);
+        foreach($Queries as $Query){
+      ?>
+      
       <div class="row no-gutters">
         <div class="query">
           <div class="options">
@@ -20,11 +26,15 @@ function UserHomepageBodyCallback(){
             <i class="material-icons" title="Edit Query">edit</i>
             <i class="material-icons" title="Run Now">flight_takeoff</i>
           </div>
-          <div class="name">Query Name</div>
-          <div class="lastRun">Last Run</div>
-          <div class="description">Query Description</div>
+          <div class="name"><?php echo $Query['Name']; ?></div>
+          <div class="lastRun"><?php echo ago($Query['LastRun']); ?></div>
+          <div class="description"><?php echo $Query['Description']; ?></div>
         </div>
       </div>
+      
+      <?php
+        }
+      ?>
       
     </div>
   </div>
