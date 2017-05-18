@@ -1,5 +1,38 @@
 <?php
 
+function UserCreateQueryPostHandler(){
+  
+  $Name = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
+  
+  Query("
+    INSERT INTO `Queries`(
+      `UserID`, 
+      `Name`, 
+      `Description`, 
+      `EngineID`, 
+      `ParserID`, 
+      `EngineLastOutput`, 
+      `ParserLatstOutput`, 
+      `LastRun`, 
+      `Code`, 
+      `CodeSHA2`
+    )VALUES(
+      '".$ASTRIA['Session']['User']['UserID']."',
+      '".$Name."',
+      '',
+      '1',
+      '1',
+      NULL,
+      NULL,
+      0,
+      NULL,
+      NULL
+    );
+  ");
+  header('Location: /edit-query/.'mysqli_insert_id($ASTRIA['databases']['astria']['resource']);
+  exit;
+  
+}
 function UserCreateQueryBodyCallback(){
   ?>
 <div class="container">
