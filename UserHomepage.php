@@ -54,7 +54,7 @@ function UserHomepageBodyCallback(){
         <div class="row no-gutters">
           <div class="query">
             <div class="options">
-              <a href="/delete-query/<?php echo $Query['QueryID']; ?>"><i class="material-icons" title="Delete Query">clear</i></a>
+              <a href="/undelete-query/<?php echo $Query['QueryID']; ?>"><i class="material-icons" title="Undelete Query">add</i></a>
               <a href="/edit-query/<?php echo $Query['QueryID']; ?>"><i class="material-icons" title="Edit Query">edit</i></a>
             </div>
             <div class="name"><a href="/run-query/<?php echo $Query['QueryID']; ?>/<?php echo $NiceURLTitle; ?>"><?php echo $Query['Name']; ?></a></div>
