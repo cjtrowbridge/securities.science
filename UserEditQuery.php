@@ -56,9 +56,7 @@ function UserEditQueryBodyCallback(){
           <div class="query">
             
             <div class="options">
-              <i class="material-icons" title="Delete Query">clear</i>
-              <i class="material-icons" title="Edit Query">edit</i>
-              <i class="material-icons" title="Run Now">flight_takeoff</i>
+              <a href="/delete-query/<?php echo $Query['QueryID']; ?>"><i class="material-icons" title="Delete Query">clear</i></a>
             </div>
             
             <div class="name">
