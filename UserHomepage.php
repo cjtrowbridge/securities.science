@@ -39,7 +39,7 @@ function UserHomepageBodyCallback(){
         }
       
       $Queries = Query("SELECT * FROM Query WHERE Trash=1 AND UserID = ".$ASTRIA['Session']['User']['UserID']);
-      if(count($Queries)>0{
+      if(count($Queries)>0){
           
       ?>
       
