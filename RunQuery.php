@@ -28,5 +28,5 @@ function RunQueryBodyCallback(){
   <p><?php echo nl2br($Query['Name']); ?></p>
 <?php
   
-  ace('ReadOnlyQuery('.$ThisQuery['QueryID'].');');
+  ace('ReadOnlyQuery('.$Query['QueryID'].');');
 }
