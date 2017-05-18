@@ -41,7 +41,12 @@ function RunQueryBodyCallback(){
   $Query=$ThisQuery[0];
   
   ?>
-  <h1><?php echo $Query['Name']; ?></h1>
+  <h1>
+    <?php echo $Query['Name']; ?>
+    <div style="float: right;">
+      <a href="/edit-query/<?php echo $Query['QueryID']; ?>"><i class="material-icons" title="Edit Query">edit</i></a>
+    </div>
+  </h1>
   <p><?php echo nl2br($Query['Description']); ?></p>
 <?php
   
