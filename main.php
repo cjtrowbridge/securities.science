@@ -52,7 +52,7 @@ function UserPage(){
     case 'run-query':
       include('RunQuery.php');
       global $ThisQuery;
-      $ThisQuery = Query("SELECT * FROM Query WHERE QueryID = ".intval(path(1));
+      $ThisQuery = Query("SELECT * FROM Query WHERE QueryID = ".intval(path(1)));
       if(isset($ThisQuery[0])){
         $Title=$ThisQuery[0]['Name'];
       }else{
