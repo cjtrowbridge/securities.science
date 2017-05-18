@@ -35,6 +35,10 @@ function PublicPage(){
       include('PublicExplore.php');
       TemplateBootstrap4('Explore','PublicExploreBodyCallback();');
       break;
+    case 'explore-table':
+      include('ExploreTable.php');
+      ExploreTable();
+      break;
     default:
     case 'login':
       PromptForLogin();
@@ -62,6 +66,10 @@ Hook('User Is Logged In - Presentation','UserPage();');
 
 function UserPage(){
   switch(path(0)){
+    case 'explore-table':
+      include('ExploreTable.php');
+      ExploreTable();
+      break;
     case 'run-query':
       global $ThisQuery;
       $ThisQuery = Query("SELECT QueryID,Name,Description,ParserLastOutput FROM Query WHERE QueryID = ".intval(path(1)));
