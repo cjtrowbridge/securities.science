@@ -53,11 +53,19 @@ function PublicExploreBodyCallback(){
     <div class="col-md-12">
       <h1>Check Out Our Data Sources</h1>
       <?php
+        $TableDescriptions = Query("SELECT * FROM Tables");
+        $Descriptions=array();
+        foreach($TableDescriptions as $TableDescription){
+          $Descriptions[$TableDescription['Name']]=$TableDescription['Description'];
+        }
+        
         $Tables = Query('SHOW TABLES','stockhistory');
+        
         foreach($Tables as $Table){
           $TableName=$Table['Tables_in_stockhistory'];
           if($TableName!=='Statistics'){
-            echo '<p><a href="/explore-table/'.urlencode($TableName).'">'.$TableName.'</a></p>';
+            echo '<p><a href="/explore-table/'.urlencode($TableName).'">'.$TableName.'</a> '.$Descriptions[$TableName].'</p>';
+            
           }
         }
       ?>
