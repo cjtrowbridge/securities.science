@@ -2,6 +2,17 @@
 
 function UserEditQueryPostHandler(){
   global $ASTRIA;
+  $Results = Query("
+    SELECT COUNT(*) as 'Count' 
+    FROM Query 
+    WHERE
+      UserID        = ".$ASTRIA['Session']['User']['UserID']." AND
+      QueryID       = ".intval($_POST['QueryID'])."
+  ");
+  if($Results[0]['Count']==0){
+    //TODO
+    die("Create fork of query owned by current user");
+  }
   
   $Name             = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
   $Description      = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['description']);
@@ -17,7 +28,7 @@ function UserEditQueryPostHandler(){
       UserID        = ".$ASTRIA['Session']['User']['UserID']." AND
       QueryID       = ".intval($_POST['QueryID'])."
   ";
-  pd($SQL);
+  Query($SQL);
   exit;
 }
 
