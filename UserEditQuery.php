@@ -24,15 +24,19 @@ function UserEditQueryBodyCallback(){
             <div class="lastRun">Last Run</div>
             
             <p><b>Description:</b></p>
-            <textarea class="AstriaEditor ready" id="description" name="description"></textarea>
+            <textarea class="AstriaEditor ready" id="description" name="description" onmouseup="$(this).css('border-color','red');"></textarea>
             
             <p><b>MySQL Code:</b></p>
-            <textarea class="AstriaEditor ready" id="query" name="query"></textarea>
+            <textarea class="AstriaEditor ready" id="query" name="query" onmouseup="$(this).css('border-color','red');"></textarea>
             
             <script>
               AstriaEditor();
               $('#query').focus();
             </script>
+            
+            <div>
+              <button type="button" class="btn btn-success">Save</button>
+            </div>
           </div>
         </div>
       </div>
