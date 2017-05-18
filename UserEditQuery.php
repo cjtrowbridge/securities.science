@@ -26,8 +26,10 @@ function UserEditQueryBodyCallback(){
             </div>
             
             <div class="name">
-              <b>Name:</b>
-              <p><?php echo $Query['Name']; ?></p>
+              <div class="form-group">
+                <label for="usr">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" value="<?php echo $Query['Name']; ?>">
+              </div>
             </div>
             
             <div class="form-group">
