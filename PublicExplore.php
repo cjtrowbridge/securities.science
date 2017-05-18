@@ -59,7 +59,7 @@ function PublicExploreBodyCallback(){
           ?>
       
           <div class="table">
-            <div class="name"><a href="/explore-table/'.urlencode($Table['Name']).'"><?php echo $Table['Name']; ?></a></div>
+            <div class="name"><a href="/explore-table/<?php echo urlencode($Table['Name']); ?>"><?php echo $Table['Name']; ?></a></div>
             <div class="description"><?php echo $Table['Description']; ?></div>
           </div>
       
