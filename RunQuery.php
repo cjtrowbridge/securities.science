@@ -4,13 +4,27 @@ function ReadOnlyQuery($QueryID){
   
   //TODO check user quota or public quota
   
-  $Results = Query("SELECT Code FROM Query WHERE QueryID = ".intval($QueryID));
+  $Results = Query("SELECT Code,RunCounter FROM Query WHERE QueryID = ".intval($QueryID));
   if(count($Results)==0){
     die('Invalid Query ID');
   }
   
-  $Table=Query($Results[0]['Code'],'stockhistory-readonly');
-  echo ArrTabler($Table);
+  
+  $Engine          = Query($Results[0]['Code'],'stockhistory-readonly');
+  $Parser          = ArrTabler($Engine);
+  
+  $EngineSanitized = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$Engine);
+  $ParserSanitized = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$Parser);
+
+  Query("
+    UPDATE Query SET
+      LastRun          = NOW(),
+      EngineLastOutput = '".$EngineSanitized."',
+      ParserLastOutput = '".$ParserSanitized."',
+      RunCounter       = ".($Results['RunCounter']+1)."
+    WHERE QueryID = ".intval($QueryID)
+  );
+  
 }
 
 function RunQueryBodyCallback(){
