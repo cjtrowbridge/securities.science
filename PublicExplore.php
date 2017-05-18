@@ -52,7 +52,7 @@ function PublicExploreBodyCallback(){
     <div class="col-md-12">
       <h1>Check Out Our Data Sources</h1>
       <?php
-        $Tables = Query('SHOW TABLES','stockhistory-readonly');
+        $Tables = Query('SHOW TABLES','stockhistory');
         foreach($Tables as $Table){
           pd($Table);
         }
