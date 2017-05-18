@@ -24,10 +24,10 @@ function UserEditQueryBodyCallback(){
             <div class="lastRun">Last Run</div>
             
             <p><b>Description:</b></p>
-            <textarea class="AstriaEditor ready" id="description" name="description" onmouseup="$('this').css('border-color','red');"></textarea>
+            <textarea class="AstriaEditor ready" id="description" name="description"></textarea>
             
             <p><b>MySQL Code:</b></p>
-            <textarea class="AstriaEditor ready" id="query" name="query" onmouseup="$('this').css('border-color','red');"></textarea>
+            <textarea class="AstriaEditor ready" id="query" name="query"></textarea>
             
             <script>
               AstriaEditor();
