@@ -26,6 +26,8 @@ function ReadOnlyQuery($QueryID){
     WHERE QueryID = ".intval($QueryID)
   );
   
+  echo $Parser;
+  exit;
 }
 
 function RunQueryBodyCallback(){
