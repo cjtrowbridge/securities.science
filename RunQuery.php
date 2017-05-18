@@ -50,6 +50,6 @@ function RunQueryBodyCallback(){
   <p><?php echo nl2br($Query['Description']); ?></p>
 <?php
   
-  $Preview=' Running query now... While you wait, take a look at the results from last time it was run...<br><br>'.$Query['ParserLastOutput'];
+  $Preview=' Running query now. While you wait, take a look at the results from last time it was run...<br><br>'.$Query['ParserLastOutput'];
   ace('ReadOnlyQuery('.$Query['QueryID'].');','','',$Preview);
 }
