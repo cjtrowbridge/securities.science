@@ -1,7 +1,7 @@
 <?php
 
 function UserDeleteQueryHandler(){
-global $ASTRIA;
+  global $ASTRIA;
 
   if(path(1)==false){
     die('No query specified.');
@@ -23,8 +23,8 @@ global $ASTRIA;
     UPDATE Query SET
       Trash = 1
     WHERE 
-      UserID  = '.$ASTRIA['Session']['User']['UserID'].' AND
-      QueryID = '.intval(path(1)).'
+      UserID  = ".$ASTRIA['Session']['User']['UserID']." AND
+      QueryID = ".intval(path(1))."
   ");
   
   header('Location: /');
