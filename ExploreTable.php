@@ -10,7 +10,7 @@ function ExploreTableBodyCallback(){
   
   $Name = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],path(1));
   
-  $Description = Query("SELECT * FROM Tables WHERE Name LIKE '".$Name."'",'stockhistory-rea');
+  $Description = Query("SELECT * FROM Tables WHERE Name LIKE '".$Name."'",'stockhistory');
   if(!(isset($Description[0]))){
     echo '<h1>Invalid Table Specified</h1>';
     return;
@@ -24,7 +24,7 @@ function ExploreTableBodyCallback(){
   <h2>Table Description</h2>
   <?php
   
-  $Describe = Query('describe '.$Description['Name'],'stockhistory-rea');
+  $Describe = Query('describe '.$Description['Name'],'stockhistory');
   echo ArrTabler($Describe);
   
   ?>
@@ -32,7 +32,7 @@ function ExploreTableBodyCallback(){
   <h2>Table Contents (Top 100 Rows)</h2>
   <?php
   
-  $Describe = Query('SELECT * FROM '.$Description['Name'].' LIMIT 100','stockhistory-rea');
+  $Describe = Query('SELECT * FROM '.$Description['Name'].' LIMIT 100','stockhistory');
   echo ArrTabler($Describe);
   
   
