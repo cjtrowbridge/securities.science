@@ -19,7 +19,7 @@ function UserHomepageBodyCallback(){
         foreach($Queries as $Query){
           $NiceURLTitle=strtolower($Query['Name']);
           $NiceURLTitle=urlencode($NiceURLTitle);
-          $NiceURLTitle=strtolower('%20','+',$NiceURLTitle);
+          $NiceURLTitle=str_replace('%20','+',$NiceURLTitle);
           
       ?>
       
