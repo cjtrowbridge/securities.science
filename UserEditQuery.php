@@ -29,6 +29,7 @@ function UserEditQueryPostHandler(){
       QueryID       = ".intval($_POST['QueryID'])."
   ";
   Query($SQL);
+  header('Location: /edit-query/'.intval($_POST['QueryID']));
   exit;
 }
 
