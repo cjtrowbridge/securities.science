@@ -26,7 +26,7 @@ function UserHomepageBodyCallback(){
             <i class="material-icons" title="Edit Query">edit</i>
             <i class="material-icons" title="Run Now">flight_takeoff</i>
           </div>
-          <div class="name"><?php echo $Query['Name']; ?></div>
+          <div class="name"><a href="/run-query/<?php echo $Query['QueryID']; ?>" target="_blank"><?php echo $Query['Name']; ?></a></div>
           <div class="lastRun"><?php echo ago($Query['LastRun']); ?></div>
           <div class="description"><?php echo $Query['Description']; ?></div>
         </div>
