@@ -22,7 +22,7 @@ function UserEditQueryBodyCallback(){
             <textarea class="AstriaEditor ready" id="query" name="query"></textarea>
             <script>
               AstriaEditor();
-              $('.query').focus();
+              $('#query').focus();
             </script>
           </div>
         </div>
