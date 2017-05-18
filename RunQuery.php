@@ -42,7 +42,7 @@ function RunQueryBodyCallback(){
   
   ?>
   <h1><?php echo $Query['Name']; ?></h1>
-  <p><?php echo nl2br($Query['Name']); ?></p>
+  <p><?php echo nl2br($Query['Description']); ?></p>
 <?php
   
   ace('ReadOnlyQuery('.$Query['QueryID'].');');
