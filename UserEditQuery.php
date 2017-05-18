@@ -3,11 +3,9 @@
 function UserEditQueryBodyCallback(){
   ?>
 
-<div class="container">
   <div class="row no-gutters">
     <div class="col-md-12">
       <h1>Edit Query</h1>
-      <div class="container">
         <div class="row no-gutters">
           <div class="query">
             
@@ -47,8 +45,6 @@ function UserEditQueryBodyCallback(){
       </div>
       
     </div>
-  </div>
-</div>
 
   <?php
 }
