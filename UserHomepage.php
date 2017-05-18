@@ -37,13 +37,17 @@ function UserHomepageBodyCallback(){
       
       <?php
         }
+      
+      $Queries = Query("SELECT * FROM Query WHERE Trash=1 AND UserID = ".$ASTRIA['Session']['User']['UserID']);
+      if(count($Queries)>0{
+          
       ?>
       
       <p class="text-center"><button type="button" class="btn btn-success" onclick="$('#trash').slideToggle('fast');">Show Deleted Queries</button></p>
       
       <div id="trash" class="hidden">
-        <?php
-          $Queries = Query("SELECT * FROM Query WHERE Trash=1 AND UserID = ".$ASTRIA['Session']['User']['UserID']);
+          <?php            
+          
           foreach($Queries as $Query){
             $NiceURLTitle=strtolower($Query['Name']);
             $NiceURLTitle=urlencode($NiceURLTitle);
@@ -67,6 +71,9 @@ function UserHomepageBodyCallback(){
           }
         ?>
       </div>
+      <?php
+      }
+      ?>
       
     </div>
   </div>
