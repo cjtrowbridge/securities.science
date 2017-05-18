@@ -3,9 +3,9 @@
 function UserEditQueryPostHandler(){
   global $ASTRIA;
   
-  $Name            = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
-  $Descriptipon    = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['description']);
-  $Code            = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['code']);
+  $Name             = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
+  $Description      = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['description']);
+  $Code             = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['code']);
   
   $SQL="
     UPDATE `Query` SET 
