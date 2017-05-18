@@ -4,7 +4,7 @@ function UserCreateQueryPostHandler(){
   
   $Name = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$_POST['name']);
   
-  Query("
+  $SQL="
     INSERT INTO `Queries`(
       `UserID`, 
       `Name`, 
@@ -28,7 +28,9 @@ function UserCreateQueryPostHandler(){
       NULL,
       NULL
     );
-  ");
+  ";
+  pd($SQL);exit;
+  Query($SQL);
   header('Location: /edit-query/'.mysqli_insert_id($ASTRIA['databases']['astria']['resource']));
   exit;
   
