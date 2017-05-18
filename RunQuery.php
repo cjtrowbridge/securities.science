@@ -50,5 +50,5 @@ function RunQueryBodyCallback(){
   <p><?php echo nl2br($Query['Description']); ?></p>
 <?php
   
-  ace('ReadOnlyQuery('.$Query['QueryID'].');');
+  ace('ReadOnlyQuery('.$Query['QueryID'].');','','',$Query['ParserLastOutput']);
 }
