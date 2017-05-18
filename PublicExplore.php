@@ -56,7 +56,7 @@ function PublicExploreBodyCallback(){
         $Tables = Query("SELECT * FROM Tables",'stockhistory');
         
         foreach($Tables as $Table){
-          echo '<p><a href="/explore-table/'.urlencode($Table['Name']).'">'.$Table['Name'].'</a><br> '.$Table['Description'].'</p>'; 
+          echo '<div class="table"><a href="/explore-table/'.urlencode($Table['Name']).'">'.$Table['Name'].'</a><br> '.$Table['Description'].'</div>'; 
         }
       ?>
     </div>
