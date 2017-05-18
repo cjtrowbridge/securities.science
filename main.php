@@ -12,7 +12,6 @@ function SecuritiesScienceTemplateHead(){
 Hook('User Is Not Logged In - Before Presentation','PublicPageBefore();');
 
 function PublicPageBefore(){
-  Nav('main-not-logged-in','link','Explore','/explore');
   Nav('main-not-logged-in','link','Login','/login');
 }
 
@@ -47,7 +46,6 @@ function PublicPage(){
 Hook('User Is Logged In - Before Presentation','UserPageBefore();');
 
 function UserPageBefore(){
-  Nav('main-logged-in','link','Explore','/explore');
   include_once('ShowSecuritiesScienceScraperStats.php');
   Hook('Architect Homepage','ShowSecuritiesScienceScraperStats();');
 }
