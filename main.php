@@ -1,7 +1,8 @@
 <?php
 
 include('QueryEngine.php');
- 
+include('SecuritiesScienceTemplateHead.php');
+Hook('Template Head','SecuritiesScienceTemplateHead();');
 
 Hook('User Is Not Logged In - Before Presentation','PublicPageBefore();');
 
