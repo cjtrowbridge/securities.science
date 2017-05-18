@@ -19,6 +19,7 @@ function PublicExploreBodyCallback(){
             LastUpdated
           FROM Query
           LEFT JOIN User ON Query.UserID = User.UserID
+          WHERE Query.Trash=0
           ORDER BY LastUpdated DESC
         ");
         //TODO make this smarter
@@ -54,7 +55,10 @@ function PublicExploreBodyCallback(){
       <?php
         $Tables = Query('SHOW TABLES','stockhistory');
         foreach($Tables as $Table){
-          pd($Table);
+          $TableName=$Table['Tables_in_stockhistory'];
+          if($TableName!=='Statistics'){
+            echo '<p><a href="/explore-table/'.urlencode($TableName).'">'.$TableName.'</a></p>';
+          }
         }
       ?>
     </div>
