@@ -82,6 +82,14 @@ function UserPage(){
         TemplateBootstrap4('Edit Query','UserEditQueryBodyCallback();');
       }
       break;
+    case 'delete-query':
+      include('UserDeleteQuery.php');
+      UserDeleteQueryHandler();
+      break;
+    case 'undelete-query':
+      include('UserUndeleteQuery.php');
+      UserUndeleteQueryHandler();
+      break;
     default:
       include('UserHomepage.php');
       TemplateBootstrap4('Home','UserHomepageBodyCallback();');
