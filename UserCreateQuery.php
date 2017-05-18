@@ -13,7 +13,7 @@ function UserCreateQueryPostHandler(){
       `EngineID`, 
       `ParserID`, 
       `EngineLastOutput`, 
-      `ParserLatstOutput`, 
+      `ParserLastOutput`, 
       `LastRun`, 
       `Code`, 
       `CodeSHA2`
