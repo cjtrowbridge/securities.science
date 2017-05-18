@@ -6,13 +6,15 @@
 .query .options{
   float: right;
 }
-.query .name{
+.query .name,
+.table .name{
    font-weight: bold;
 }
 .query .lastRun{
    font-style: italic;
 }
-.query .description{
+.query .description,
+.table .description{
    padding: 1rem;
    text-indent: 1rem;
 }
