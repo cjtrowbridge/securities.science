@@ -39,7 +39,7 @@ function UserHomepageBodyCallback(){
         }
       ?>
       
-      <p><button type="button" class="btn btn-block btn-success" onclick="$('#trash').slideToggle('fast');">Show Deleted Queries</button></p>
+      <p class="text-center"><button type="button" class="btn btn-success" onclick="$('#trash').slideToggle('fast');">Show Deleted Queries</button></p>
       
       <div id="trash" class="hidden">
         <?php
