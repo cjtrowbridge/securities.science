@@ -51,7 +51,7 @@ function UserEditQueryBodyCallback(){
             </script>
             
             <div class="form-group">
-              <button type="button" class="btn btn-success">Save</button>
+              <input type="submit" class="btn btn-success" value="Save Changes">
             </div>
           </div>
         </div>
