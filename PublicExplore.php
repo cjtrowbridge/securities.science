@@ -53,27 +53,10 @@ function PublicExploreBodyCallback(){
     <div class="col-md-12">
       <h1>Check Out The Available MySQL Tables</h1>
       <?php
-        $TableDescriptions = Query("SELECT * FROM Tables",'stockhistory');
-        $Descriptions=array();
-        foreach($TableDescriptions as $TableDescription){
-          $Descriptions[$TableDescription['Name']]=$TableDescription['Description'];
-        }
-        
-        $Tables = Query('SHOW TABLES','stockhistory');
+        $Tables = Query("SELECT * FROM Tables",'stockhistory');
         
         foreach($Tables as $Table){
-          $TableName=$Table['Tables_in_stockhistory'];
-          $Description = 'No description available.';
-          if(isset($Descriptions[$TableName])){
-            $Description=$Descriptions[$TableName];
-          }
-          if(
-            ($TableName!=='Statistics')&&
-            ($TableName!=='Tables')
-          ){
-            echo '<p><a href="/explore-table/'.urlencode($TableName).'">'.$TableName.'</a><br> '.$Description.'</p>';
-            
-          }
+          echo '<p><a href="/explore-table/'.urlencode($Table['Name']).'">'.$Table['Name'].'</a><br> '.$Table['Description'].'</p>'; 
         }
       ?>
     </div>
