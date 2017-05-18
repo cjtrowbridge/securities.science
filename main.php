@@ -63,7 +63,11 @@ function UserPage(){
       break;
     case 'edit-query':
       include('UserEditQuery.php');
-      TemplateBootstrap4('Edit Query','UserEditQueryBodyCallback();');
+      if(isset($_POST['QueryID'])){
+        UserEditQueryPostHandler();
+      }else{
+        TemplateBootstrap4('Edit Query','UserEditQueryBodyCallback();');
+      }
       break;
     default:
       include('UserHomepage.php');
