@@ -59,6 +59,7 @@ function UserPageBefore(){
 Hook('User Is Logged In - Presentation','UserPage();');
 
 function UserPage(){
+  global $ASTRIA;
   switch(path(0)){
     case 'security':
       include('Security.php');
