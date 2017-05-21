@@ -52,7 +52,12 @@ function SecurityBodyCallback(){
   <h2>Last 14 Days</h2>
   <?php
   $Table=Query("
-    SELECT * 
+    SELECT 
+      *,
+      ROUND(AvgAdvance14,4) as 'AvgAdvance14',
+      ROUND(AvgDecline14,4) as 'AvgDecline14',
+      ROUND(RSI14) as 'RSI14'
+      
     FROM DailyQuotesWithRSI 
     WHERE 
       Symbol LIKE '".$Symbol."' AND 
