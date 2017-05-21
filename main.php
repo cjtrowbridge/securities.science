@@ -60,6 +60,19 @@ Hook('User Is Logged In - Presentation','UserPage();');
 
 function UserPage(){
   switch(path(0)){
+    case 'security':
+      include('Security.php');
+      $Title='Security';
+      if(!(path(1)==false)){
+        $Symbol = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],path(1));
+        $Symbol=strtoupper($Symbol);
+        $Symbol=Query("SELECT Symbol FROM Security WHERE upper(Symbol) LIKE '".$Symbol."'");
+        if(isset($Symbol[0])){
+          $Title=$Symbol;
+        }
+      }
+      TemplateBootstrap4($Title,'SecurityBodyCallback();');
+      break;
     case 'explore-table':
       include('ExploreTable.php');
       TemplateBootstrap4('Table Explorer','ExploreTableBodyCallback();');
