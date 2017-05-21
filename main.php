@@ -72,7 +72,7 @@ function UserPage(){
           $Title=$Symbol[0]['Symbol'];
         }
       }
-      TemplateBootstrap4($Title,'SecurityBodyCallback();');
+      TemplateBootstrap4($Title,'SecurityBodyCallback();',true);
       break;
     case 'explore-table':
       include('ExploreTable.php');
