@@ -67,7 +67,7 @@ function UserPage(){
       if(!(path(1)==false)){
         $Symbol = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],path(1));
         $Symbol=strtoupper($Symbol);
-        $Symbol=Query("SELECT Symbol FROM Security WHERE upper(Symbol) LIKE '".$Symbol."'");
+        $Symbol=Query("SELECT Symbol FROM Security WHERE Symbol LIKE '".$Symbol."'");
         if(isset($Symbol[0])){
           $Title=$Symbol[0]['Symbol'];
         }
