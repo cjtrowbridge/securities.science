@@ -69,7 +69,7 @@ function UserPage(){
         $Symbol=strtoupper($Symbol);
         $Symbol=Query("SELECT Symbol FROM Security WHERE upper(Symbol) LIKE '".$Symbol."'");
         if(isset($Symbol[0])){
-          $Title=$Symbol;
+          $Title=$Symbol[0]['Symbol'];
         }
       }
       TemplateBootstrap4($Title,'SecurityBodyCallback();');
