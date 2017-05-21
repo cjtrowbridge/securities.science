@@ -1,6 +1,7 @@
 <?php
 
 function SecurityBodyCallback(){
+  global $ASTRIA;
   $Title = 'Securities';
   if(!(path(1)==false)){
     $Symbol = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],path(1));
