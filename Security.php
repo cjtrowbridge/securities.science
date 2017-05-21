@@ -42,7 +42,7 @@ function SecurityBodyCallback(){
   
   //Increment Hit Counter
   Query("
-    UPDATE mytable 
+    UPDATE Security 
     SET Hits = Hits + 1 
     WHERE Symbol LIKE '".$Symbol."'
   ");
