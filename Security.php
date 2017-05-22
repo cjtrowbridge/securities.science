@@ -13,15 +13,14 @@ function SecurityBodyCallback(){
       $Title=$Symbol;
     }
   }
-  ?>
-  <h1><?php echo $Title; ?></h1>
-  <?php
+  
   
   
   //SHOWING A LIST OF SECURITIES
   
   if($Symbol==null){
     ?>
+  <h1><?php echo $Title; ?></h1>
   <p>Here are all the securities we track;</p>
     <?php
     
@@ -39,7 +38,9 @@ function SecurityBodyCallback(){
   
   
   //SHOWING A SINGLE SECURITY
-  
+  ?>
+  <h1>/<a href="/security">Security</a>/<?php echo $Title; ?></h1>
+  <?php
   //Increment Hit Counter
   Query("
     UPDATE Security 
@@ -60,9 +61,9 @@ function SecurityBodyCallback(){
       
     FROM DailyQuotesWithRSI 
     WHERE 
-      Symbol LIKE '".$Symbol."' AND 
-      TradingDate >= DATE_SUB(NOW(),INTERVAL 14 DAY) 
+      Symbol LIKE '".$Symbol."'
     ORDER BY TradingDate DESC
+    LIMIT 14
   ","stockhistory");
   echo ArrTabler($Table);
 }
