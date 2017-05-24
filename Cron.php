@@ -2,7 +2,7 @@
 
 Hook('Hourly Cron','SecuritiesScienceHourlyCron();');
 function SecuritiesScienceHourlyCron(){
-  SendEmail('This is an hourly cron alert.','cron','chris.j.trowbridge@gmail.com');
+  //SendEmail('This is an hourly cron alert.','cron','chris.j.trowbridge@gmail.com');
 }
 
 Hook('Daily Cron','SecuritiesScienceDailyCron();');
