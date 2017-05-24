@@ -1,6 +1,7 @@
 <?php
 
 include('RunQuery.php');
+include('Cron.php');
 
 Hook('Template Head','SecuritiesScienceTemplateHead();');
 function SecuritiesScienceTemplateHead(){
