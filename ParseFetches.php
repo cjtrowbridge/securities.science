@@ -24,7 +24,7 @@ function SSParseFetchesNow(){
     INSERT INTO `FeedFetch` (
       `FeedID`, `URL`, `Arguments`, `FetchTime`, `Duration`, `Content`, `ContentLength`, `Expires`
     ) VALUES (
-      '".0."', 
+      '0', 
       '".$URL."', 
       NULL /* TODO: Arguments (This is complicated and not immediately necessary.) */, 
       NOW(), 
