@@ -12,7 +12,7 @@ function SSParseFetchesNow(){
   global $ASTRIA;
   
   $Start    = microtime(true);
-  $Content  = FetchURL('https://api.robinhood.com/quotes/historicals/DUST/?interval=5minute&span=week&bounds=regular');
+  $Content  = FetchURL('https://api.robinhood.com/quotes/historicals/DUST/?interval=5minute&span=day&bounds=regular');
   $End      = microtime(true);
   
   $Duration = $End - $Start;
