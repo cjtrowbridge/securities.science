@@ -111,6 +111,9 @@ function UserPage(){
         TemplateBootstrap4('Edit Query','UserEditQueryBodyCallback();');
       }
       break;
+    case 'test':
+      include('ParseFetches.php');
+      SSParseFetchesNow();
     case 'delete-query':
       include('UserDeleteQuery.php');
       UserDeleteQueryHandler();
