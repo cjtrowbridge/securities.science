@@ -35,4 +35,10 @@ function SSParseFetchesNow(){
     );
   ";
   pd(Query($SQL));
+  echo '<p>'.strlen($Content).'</p>';
+  echo '<p>inserted</p>';
+  
+  $Data = Query("SELECT * FROM FeedFetch ORDER BY FetchID DESC LIMIT 1");
+  echo strlen($Data[0]['Content']);
+  echo $Data[0]['Content'];
 }
