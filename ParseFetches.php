@@ -18,13 +18,13 @@ function SSParseFetchesNow(){
   $Duration = $End - $Start;
   $URL      = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],'https://api.robinhood.com/quotes/historicals/DUST/?interval=5minute&span=week&bounds=regular');
   $Content  = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$Content);
-  $Expires=date('Y-m-d H:i:s',(time()+$Feed['TTL']));
+  $Expires=date('Y-m-d H:i:s',0);
   
   $SQL="
     INSERT INTO `FeedFetch` (
       `FeedID`, `URL`, `Arguments`, `FetchTime`, `Duration`, `Content`, `ContentLength`, `Expires`
     ) VALUES (
-      '".$Feed['FeedID']."', 
+      '".0."', 
       '".$URL."', 
       NULL /* TODO: Arguments (This is complicated and not immediately necessary.) */, 
       NOW(), 
