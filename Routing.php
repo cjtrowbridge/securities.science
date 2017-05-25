@@ -113,7 +113,7 @@ function UserPage(){
       break;
     case 'test':
       include('ParseFetches.php');
-      SSParseFetchesNow();
+      SSParseFetchesRobinhood();
       exit;
     case 'delete-query':
       include('UserDeleteQuery.php');
