@@ -3,6 +3,12 @@
 include('RunQuery.php');
 include('Cron.php');
 
+Hook('FeedSync Fetch Service Done','SSParser();');
+function SSParser(){
+  include('ParseFetches.php');
+  SSParseFetches();
+}
+
 Hook('Template Head','SecuritiesScienceTemplateHead();');
 function SecuritiesScienceTemplateHead(){
   ?>
