@@ -114,6 +114,7 @@ function UserPage(){
     case 'test':
       include('ParseFetches.php');
       SSParseFetchesNow();
+      break;
     case 'delete-query':
       include('UserDeleteQuery.php');
       UserDeleteQueryHandler();
