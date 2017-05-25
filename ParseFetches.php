@@ -16,7 +16,7 @@ function SSParseFetchesNow(){
   $End      = microtime(true);
   
   $Duration = $End - $Start;
-  $URL      = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],'https://api.robinhood.com/quotes/historicals/DUST/?interval=5minute&span=week&bounds=regular');
+  $URL      = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],'https://api.robinhood.com/quotes/historicals/DUST/?interval=5minute&span=day&bounds=regular');
   $Content  = mysqli_real_escape_string($ASTRIA['databases']['astria']['resource'],$Content);
   $Expires=date('Y-m-d H:i:s',0);
   
