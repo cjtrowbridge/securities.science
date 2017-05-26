@@ -12,7 +12,9 @@ function SSParseFetchesRobinhood(){
     
     while($LastDate < time()){
       //check for data
-      $Data = Query("SELECT * FROM FeedFetch WHERE URL LIKE '%robinhood%' AND FetchTime LIKE '%".date('Y-m-d',$LastDate)."T16%' ORDER BY FetchID DESC LIMIT 1");
+      $SQL="SELECT * FROM FeedFetch WHERE URL LIKE '%robinhood%' AND FetchTime LIKE '%".date('Y-m-d',$LastDate)."T16%' ORDER BY FetchID DESC LIMIT 1";
+      $Data = Query($SQL);
+      pd($SQL);
       pd($Data);
       //add to dailies
       
