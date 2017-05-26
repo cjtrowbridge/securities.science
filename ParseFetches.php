@@ -12,7 +12,7 @@ function SSParseFetchesRobinhood(){
     
     while($LastDate < time()){
       //check for data
-      $SQL="SELECT * FROM FeedFetch WHERE URL LIKE '%robinhood%' AND FetchTime LIKE '%".date('Y-m-d',$LastDate)."T16%' ORDER BY FetchID DESC LIMIT 1";
+      $SQL="SELECT * FROM FeedFetch WHERE URL LIKE '%robinhood%' AND FetchTime LIKE '%".date('Y-m-d',$LastDate)."T16:00%' ORDER BY FetchID DESC LIMIT 1";
       $Data = Query($SQL);
       pd($SQL);
       pd($Data);
@@ -22,21 +22,5 @@ function SSParseFetchesRobinhood(){
       $LastDate += (60*60*24);
     }
     
-    /*
-    $Data = Query("SELECT * FROM FeedFetch WHERE URL LIKE '%robinhood%' AND FetchTime > '".date('Y-m-d',$LastDate)."' ORDER BY FetchID DESC LIMIT 1");
-    foreach($Data as $Fetch){
-      $Content = $Fetch['Content'];
-      $JSON = json_decode($Content,true);
-      foreach($JSON['Historical'] as $Quote){
-        $QuoteTime = strtotime($Quote['begins_at']);
-        if(
-          ($QuoteTime > $LastDate) &&
-          (date('H',$QuoteTime) > 16
-        ){
-          
-        }
-      }
-    }
-  */
   }
 }
