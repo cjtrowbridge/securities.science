@@ -93,7 +93,7 @@ function UserPage(){
       }else{
         $ThisQuery='Query Not Found';
       }
-      TemplateBootstrap4($Title,'RunQueryBodyCallback();');
+      TemplateBootstrap4($Title,'RunQueryBodyCallback();',true);
       break;
     case 'create-query':
       include('UserCreateQuery.php');
