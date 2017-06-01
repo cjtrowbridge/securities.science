@@ -35,7 +35,7 @@ function PublicPage(){
       }else{
         $ThisQuery='Query Not Found';
       }
-      TemplateBootstrap4($Title,'RunQueryBodyCallback();');
+      TemplateBootstrap4($Title,'RunQueryBodyCallback();',true);
       break;
     case false:
     case 'explore':
