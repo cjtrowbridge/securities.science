@@ -12,7 +12,7 @@ function ReadOnlyQueryJSON($QueryID){
   
   $Data = unserialize($Results['EngineLastOutput']);
   
-  $Output = json_encode($Engine,JSON_PRETTY_PRINT);
+  $Output = json_encode($Data,JSON_PRETTY_PRINT);
   
   
   echo $Output;
