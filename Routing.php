@@ -27,6 +27,8 @@ Hook('User Is Not Logged In - Presentation','PublicPage();');
 
 function PublicPage(){
   switch(path(0)){
+    case 'json':
+      ReadOnlyQueryJSON(path(1));
     case 'run-query':
       global $ThisQuery;
       $ThisQuery = Query("SELECT QueryID,Name,Description,ParserLastOutput,Code FROM Query WHERE QueryID = ".intval(path(1)));
