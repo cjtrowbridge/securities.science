@@ -1,5 +1,24 @@
 <?php
 
+function ReadOnlyQueryJSON($QueryID){
+  
+  //TODO check user quota or public quota
+  
+  $Results = Query("SELECT EngineLastOutput FROM Query WHERE QueryID = ".intval($QueryID));
+  if(count($Results)==0){
+    die('Invalid Query ID');
+  }
+  $Results=$Results[0];
+  
+  $Data = unserialize($Results['EngineLastOutput']);
+  
+  $Output = json_encode($Engine,JSON_PRETTY_PRINT);
+  
+  
+  echo $Output;
+  exit;
+}
+
 function ReadOnlyQuery($QueryID){
   global $ASTRIA;
   
