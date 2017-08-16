@@ -16,16 +16,11 @@ function FillInMissingOpenGaps(){
       continue;
     }
     
-    $Gap = $Data[0]['Close'] - $Missing['Open'];
+    $Gap = $Missing['Open'] - $Data[0]['Close'];
     
     
     $SQL="UPDATE DailyQuotesWithRSI SET OpenGap = '".$Gap."' WHERE DailyQuoteWithRSIID = ".$Missing['DailyQuoteWithRSIID'];
     Query($SQL);
-    
-    pd($Missing);
-    pd($Data[0]);
-    pd($SQL);
-    echo '<hr>';
     
   }
 }
