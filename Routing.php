@@ -70,7 +70,7 @@ Hook('User Is Logged In - Presentation','UserPage();');
 function UserPage(){
   global $ASTRIA;
   switch(path(0)){
-    case 'FillInMissingAvg14AtOpen':
+    case 'fillinmissingavg14atopen':
       include('FillInMissingAvg14AtOpen.php');
       FillInMissingAvg14AtOpen();
       die('ok');
