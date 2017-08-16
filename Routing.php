@@ -72,9 +72,11 @@ Hook('User Is Logged In - Presentation','UserPage();');
 function UserPage(){
   global $ASTRIA;
   switch(path(0)){
-    case 'fillinmissingopengaps':
+    case 'fillinmissingmetrics':
       include('FillInMissingOpenGaps.php');
       FillInMissingOpenGaps();
+      include('FillInMissingAvg14AtOpen.php');
+      FillInMissingAvg14AtOpen();
       die('ok');
     case 'security':
       include('Security.php');
