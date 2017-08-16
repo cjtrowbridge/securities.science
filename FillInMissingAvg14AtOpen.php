@@ -3,7 +3,7 @@
 function FillInMissingAvg14AtOpen(){
   
   //Find a chunk of them that have not been filled in
-  $Missings = Query("SELECT * FROM DailyQuotesWithRSI WHERE Avg14AtOpen IS NULL ORDER BY TradingDate DESC LIMIT 30");
+  $Missings = Query("SELECT * FROM DailyQuotesWithRSI WHERE Avg14AtOpen IS NULL ORDER BY TradingDate DESC LIMIT 1000");
   
   foreach($Missings as $Missing){
     
