@@ -20,9 +20,11 @@ function FillInMissingAvg14AtOpen(){
     
     foreach($Data as $Day){
     
-      $Average += (($Day['Open'] + $Day['Close']) / 2);
+      $Average += $Day['Open'] + $Day['Close'];
     
     }
+    
+    $Average = $Average / (14*2); //Divide by the number of things we put into it.
     
     Query("UPDATE DailyQuotesWithRSI SET Avg14AtOpen = '".$Average."' WHERE DailyQuoteWithRSIID = ".$Missing['DailyQuoteWithRSIID']);
     
