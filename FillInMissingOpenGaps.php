@@ -21,7 +21,11 @@ function FillInMissingOpenGaps(){
     
     $SQL="UPDATE DailyQuotesWithRSI SET OpenGap = '".$Gap."' WHERE DailyQuoteWithRSIID = ".$Missing['DailyQuoteWithRSIID'];
     Query($SQL);
+    
+    pd($Missing);
+    pd($Data[0]);
     pd($SQL);
+    echo '<hr>';
     
   }
 }
