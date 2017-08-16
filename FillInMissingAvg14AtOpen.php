@@ -12,7 +12,7 @@ function FillInMissingAvg14AtOpen(){
     
     //If there is not at least 14 days of data, skip this one.
     if(count($Data)<14){
-      Query("UPDATE DailyQuotesWithRSI SET FillInMissingAvg14AtOpen = 0 WHERE DailyQuoteWithRSIID = ".Missing['DailyQuoteWithRSIID']);
+      Query("UPDATE DailyQuotesWithRSI SET FillInMissingAvg14AtOpen = 0 WHERE DailyQuoteWithRSIID = ".$Missing['DailyQuoteWithRSIID']);
       continue;
     }
     
@@ -24,7 +24,7 @@ function FillInMissingAvg14AtOpen(){
     
     }
     
-    Query("UPDATE DailyQuotesWithRSI SET FillInMissingAvg14AtOpen = '".$Average."' WHERE DailyQuoteWithRSIID = ".Missing['DailyQuoteWithRSIID']);
+    Query("UPDATE DailyQuotesWithRSI SET FillInMissingAvg14AtOpen = '".$Average."' WHERE DailyQuoteWithRSIID = ".$Missing['DailyQuoteWithRSIID']);
     
   }
 }
