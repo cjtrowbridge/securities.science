@@ -3,7 +3,7 @@
 function FillInMissingOpenGaps(){
   
   //Find a chunk of them that have not been filled in
-  $Missings = Query("SELECT * FROM DailyQuotesWithRSI WHERE OpenGap IS NULL ORDER BY TradingDate DESC LIMIT 4");
+  $Missings = Query("SELECT * FROM DailyQuotesWithRSI WHERE OpenGap IS NULL ORDER BY TradingDate DESC");
   
   foreach($Missings as $Missing){
     
