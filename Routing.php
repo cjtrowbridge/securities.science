@@ -5,10 +5,16 @@ include('Cron.php');
 
 Hook('FeedSync Fetch Service Done','SSParser();');
 function SSParser(){
+  
   include('ParseFetches.php');
   SSParseFetches();
+  
   include('FillInMissingAvg14AtOpen.php');
   FillInMissingAvg14AtOpen();
+  
+  include('FillInMissingAvg14AtOpen.php');
+  FillInMissingAvg14AtOpen();
+  
 }
 
 Hook('Template Head','SecuritiesScienceTemplateHead();');
