@@ -3,16 +3,16 @@
 function FillInMissingAvg14AtOpen(){
   
   //Find a chunk of them that have not been filled in
-  $Missings = Query("SELECT * FROM DailyQuotesWithRSI WHERE Avg14AtOpen IS NULL ORDER BY TradingDate DESC");
+  $Missings = Query("SELECT * FROM DailyQuotesWithRSI WHERE Avg14AtOpen IS NULL ORDER BY TradingDate DESC",'stockhistory');
   
   foreach($Missings as $Missing){
     
     //Get the previous 14 days' data
-    $Data = Query("SELECT * FROM DailyQuotesWithRSI WHERE Symbol LIKE '".$Missing['Symbol']."' AND TradingDate < '".$Missing['TradingDate']."' ORDER BY TradingDate DESC LIMIT 14");
+    $Data = Query("SELECT * FROM DailyQuotesWithRSI WHERE Symbol LIKE '".$Missing['Symbol']."' AND TradingDate < '".$Missing['TradingDate']."' ORDER BY TradingDate DESC LIMIT 14",'stockhistory');
     
     //If there is not at least 14 days of data, skip this one.
     if(count($Data)<14){
-      Query("UPDATE DailyQuotesWithRSI SET Avg14AtOpen = 0 WHERE DailyQuoteWithRSIID = ".$Missing['DailyQuoteWithRSIID']);
+      Query("UPDATE DailyQuotesWithRSI SET Avg14AtOpen = 0 WHERE DailyQuoteWithRSIID = ".$Missing['DailyQuoteWithRSIID']),'stockhistory';
       continue;
     }
     
@@ -26,7 +26,7 @@ function FillInMissingAvg14AtOpen(){
     
     $Average = $Average / (14*2); //Divide by the number of things we put into it.
     
-    Query("UPDATE DailyQuotesWithRSI SET Avg14AtOpen = '".$Average."' WHERE DailyQuoteWithRSIID = ".$Missing['DailyQuoteWithRSIID']);
+    Query("UPDATE DailyQuotesWithRSI SET Avg14AtOpen = '".$Average."' WHERE DailyQuoteWithRSIID = ".$Missing['DailyQuoteWithRSIID'],'stockhistory');
     
   }
 }
