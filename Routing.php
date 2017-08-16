@@ -131,7 +131,7 @@ function UserPage(){
       include('UserUndeleteQuery.php');
       UserUndeleteQueryHandler();
       break;
-    default:
+    case false:
       include('UserHomepage.php');
       TemplateBootstrap4('Home','UserHomepageBodyCallback();');
       break;
