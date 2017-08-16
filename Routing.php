@@ -7,6 +7,8 @@ Hook('FeedSync Fetch Service Done','SSParser();');
 function SSParser(){
   include('ParseFetches.php');
   SSParseFetches();
+  include('FillInMissingAvg14AtOpen.php');
+  FillInMissingAvg14AtOpen();
 }
 
 Hook('Template Head','SecuritiesScienceTemplateHead();');
@@ -70,9 +72,9 @@ Hook('User Is Logged In - Presentation','UserPage();');
 function UserPage(){
   global $ASTRIA;
   switch(path(0)){
-    case 'fillinmissingavg14atopen':
-      include('FillInMissingAvg14AtOpen.php');
-      FillInMissingAvg14AtOpen();
+    case 'fillinmissingopengaps':
+      include('FillInMissingOpenGaps.php');
+      FillInMissingOpenGaps();
       die('ok');
     case 'security':
       include('Security.php');
