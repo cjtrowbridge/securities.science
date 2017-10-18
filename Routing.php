@@ -56,7 +56,7 @@ function PublicPage(){
       include('ExploreTable.php');
       TemplateBootstrap4('Table Explorer','ExploreTableBodyCallback();');
       break;
-    default:
+    //default:
     case 'login':
       PromptForLogin();
       break;
