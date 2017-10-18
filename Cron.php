@@ -3,6 +3,9 @@
 Hook('Hourly Cron','SecuritiesScienceHourlyCron();');
 function SecuritiesScienceHourlyCron(){
   //SendEmail('This is an hourly cron alert.','cron','chris.j.trowbridge@gmail.com');
+  if(file_exists('InsertWorker.php')){
+    include('InsertWorker.php');
+  }
 }
 
 Hook('Daily Cron','SecuritiesScienceDailyCron();');
